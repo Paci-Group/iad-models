@@ -1,0 +1,22 @@
+! PBE0 RIJK VeryTightSCF def2-tzvppd AutoAux KEEPDENS
+  
+%maxcore 3000
+
+*xyzfile 0 1 input.xyz
+
+%scf
+ efield 0.0, 1e-3, 0.0
+ maxiter 500
+end
+
+%plots
+   dim1 200 # resolution in x-direction
+   dim2 200 # resolution in y-direction
+   dim3 200 # resolution in z-direction
+   Format Gaussian_Cube # Gaussian-cube format
+   ElDens("total_density.cube"); # Electron density
+end
+
+%PAL
+  NPROCS 28
+END

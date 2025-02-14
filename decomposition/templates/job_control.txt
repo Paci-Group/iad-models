@@ -1,0 +1,12 @@
+<atomic densities directory complete path>
+/home/bhenders/opt/chargemol_09_26_2017/atomic_densities/
+</atomic densities directory complete path>
+<input filename>
+chargemol.wfx
+</input filename>
+<charge type>
+DDEC6
+</charge type>
+<compute BOs>
+.true.
+</compute BOs>

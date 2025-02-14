@@ -1,0 +1,5 @@
+molecule total_density.cube
+load ../total_density.cube
+load total_density.cube
+integrable 2 MULTIPOLE 1
+yt
