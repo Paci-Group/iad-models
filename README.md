@@ -4,13 +4,15 @@ Python scripts for modeling molecular and crystalline geometries as an array of 
 ## Scripts
 1. `ts_fi_chargemol_analysis.py`: Iterates through the molecules whose basin charges and moments are contained in the file `chargemol.txt` and computes their polarizability tensors using the volume scaling with self-consistend screening approach of Tkatchenko and Scheffler as implemented in LibMBD (more precisely the MBD@rsSCS method).
 2. `ts_fi_horton_analysis.py`: Does the same thing as the above, but gets the charges and moments from `.h5` files created by HORTON. The files should each be in a directory named as the molecules they correspond with. For example, the mbis charges for BH$_3$ would be in the file `BH3/mbis_output.h5`
-3. `ts_optimize_ref_plus_beta.py`: Optimizes the reference free atom polarizbilities in the model to minimize the Mean Relative Unsigned Error between the inducible atomic dipole model polarizabilities and the reference polarizabilities. 
+3. `ts_optimize_ref_plus_beta.py`: Optimizes the reference free atom polarizbilities in the model to minimize the Mean Relative Unsigned Error between the inducible atomic dipole model polarizabilities and the reference polarizabilities.
+4. `decomposition/get_decomposed_polarizabilities_zero_centered.py`: Uses atomic basins from the Critic2 program to decompose the polarizability tensor into charge transfer and local dipole terms.
 
 ## Additional Data
 1. `chargemol.txt`: contains the DDEC6 atomic charges and moments for the molecules from the polarizability dataset described by Hait and Head-Gordon in "How accurate are static polarizability predictions from density functional theory? An assessment over 132 species at equilibrium geometry." (2018) (DOI: 10.1039/C8CP03569E).
+2. `decomposition` also contains geometries for 9 TiO$_2$ clusters and input scripts for computing atomic basins for them. Head [there](decomposition/README.md) for more information.
 
 ## Dependencies
-These scripts require a slightly modified version of the libMBD package. In particular, a new function 
+Thes first three scripts require a slightly modified version of the libMBD package. In particular, a new function 
 `screening_aim` needs to be added to the file src/pymbd/pymbd.py. The function looks like:
 
 ```python
