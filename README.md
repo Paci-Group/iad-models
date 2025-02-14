@@ -76,4 +76,4 @@ if __name__ == '__main__':
         )
 ```
 
-Finally from the outer directory containing `setup.py`, run `pip install -e gould2016`.
+Finally from the outer directory containing `setup.py`, run `pip install -e .`.
