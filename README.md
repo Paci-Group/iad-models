@@ -5,6 +5,9 @@ Python scripts for modeling molecular and crystalline geometries as an array of 
 1. `ts_fi_chargemol_analysis.py`: Iterates through the molecules whose basin charges and moments are contained in the file `chargemol.txt` and computes their polarizability tensors using the volume scaling with self-consistend screening approach of Tkatchenko and Scheffler as implemented in LibMBD (more precisely the MBD@rsSCS method).
 2. `ts_fi_horton_analysis.py`: Does the same thing as the above, but gets the charges and moments from `.h5` files created by HORTON. The files should each be in a directory named as the molecules they correspond with. For example, the mbis charges for BH$_3$ would be in the file `BH3/mbis_output.h5`
 
+## Additional Data
+1. `chargemol.txt`: contains the DDEC6 atomic charges and moments for the molecules from the polarizability dataset described by Hait and Head-Gordon in "How accurate are static polarizability predictions from density functional theory? An assessment over 132 species at equilibrium geometry." (2018) (DOI: 10.1039/C8CP03569E).
+
 ## Dependencies
 These scripts require a slightly modified version of the libMBD package. In particular, a new function 
 `screening_aim` needs to be added to the file src/pymbd/pymbd.py. The function looks like:
